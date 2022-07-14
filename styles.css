@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(0deg, rgba(210,244,255,1) 0%, rgba(208,251,255,1) 50%, rgba(143,249,255,1) 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+.main{
+    position: relative;
+}
+
+
+.music-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 6px 11px rgba(0, 163, 255, 0.59);
+    border-radius: 15px;
+    width: 800px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container{
+    position: relative;
+    width: 150px;
+}
+
+.img-container img{
+    left: -300px;
+    top: -110px;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 150px;
+    width: inherit;
+    position: absolute;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.navigation-button{
+    background: none;
+    border: none;
+    color: #dfdbdf;
+    font-size: 40px;
+}
+
+.prevBtn{
+    font-size: 25px;
+}
+.nextBtn{
+    font-size: 25px;
+}
+
+.navigation-button:hover{
+    cursor: pointer;
+}
+
+.music-info{
+    background-color: #F0FBFF;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    position: absolute;
+    top: -100px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+
+}
+
+.music-info_content{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+#title{
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+#subtitle{
+    color: rgb(134, 132, 132);
+    font-size: 1rem;
+    font-weight: 700;
+
+}
+
+.noDisplay{
+    display: none;
+}
+
+.progress-container{
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px 0;
+    height: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.progress{
+    background-color: #59D7FF;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width .1s linear;
+}
+
+/* .audioController{  
+    background: none;
+    font-size: 25px;
+    border: none;
+    
+} */

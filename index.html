@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5e31dc385f.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Music Player</title>
+</head>
+<body>
+    <main class="main">
+        <!-- Agregar play a music-container para que empiece a dar vueltas el disco -->
+    <div class="music-container" id="music-container">
+        <!-- Poner no display para ocultar la información del disco -->
+        <div class="music-info " id="music-info">
+            <div class="music-info_content">
+                <h4 id="title"></h4>
+                <h3 id="subtitle"></h3>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio src="./Music/Bzrp music sessions #52.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="./Images/quevedo bzrp.jpg" alt="Quevedo bzrp" id="music-cover">
+        </div>
+        <div class="navigation">
+            <button id="prev" class="prevBtn navigation-button">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="playBtn navigation-button">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="nextBtn navigation-button">
+                <i class="fas fa-forward"></i>
+            </button>
+            <!-- <button id="audioController" class="audioController navigation-button">
+                <i class='bx bxs-volume'></i>
+            </button> -->
+        </div>
+        <!-- <div class="volume-controller-container">
+            <div class="volume-controller">
+
+            </div>
+        </div> -->
+    </div>
+</main>
+    <script src="index.js"></script>
+</body>
+</html>
