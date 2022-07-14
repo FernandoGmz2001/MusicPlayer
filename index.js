@@ -7,6 +7,8 @@ const nextBtn = document.querySelector("#next");
 const audio = document.querySelector("#audio");
 const progressContainer = document.querySelector("#progress-container");
 const progress = document.querySelector("#progress");
+const volumeprogressContainer = document.querySelector("#volumeprogress-container");
+const volumeprogress = document.querySelector("#volumeprogress");
 const title  = document.querySelector("#title");
 const subtitle  = document.querySelector("#subtitle");
 const cover  = document.querySelector("#music-cover");
@@ -80,15 +82,13 @@ function nextSong(){
     prevBtn.addEventListener("click",prevSong);
     nextBtn.addEventListener("click",nextSong);
 
-audio.addEventListener("timeupdate",updateProgress);
 
 function updateProgress(e){
     const{duration, currentTime} = e.target;
     const progressPercent = (currentTime/ duration) * 100;
     progress.style.width = `${progressPercent}%`;
 }
-progressContainer.addEventListener("click",setProgress);
-
+audio.addEventListener("timeupdate",updateProgress);
 
 function setProgress(e){
     //Esto devuelve el ancho de la barra de progreso
@@ -101,6 +101,37 @@ function setProgress(e){
     //Con esta funcion se hacen calculos para mover la canción a la duración donde se está clickeando
     audio.currentTime = (clickX / width) * duration;
 }
+progressContainer.addEventListener("click",setProgress);
 
-audio.addEventListener("ended",nextSong);
-audio.volume = 0.15;
+
+
+function setVolume(e){
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    audio.volume = (clickX / width)
+    console.log(clickX)
+}
+
+function updateVolume(e){
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const medida = (clickX / width)*100
+    volumeprogress.style.width = `${medida}%`;
+}
+
+volumeprogressContainer.addEventListener('click',setVolume)
+volumeprogressContainer.addEventListener("click",updateVolume);
+audio.addEventListener("ended",nextSong)
+
+function volumenDefault(){
+
+    const medida = 22
+    volumeprogress.style.width = `${medida}%`;
+    audio.volume = 0.2
+}
+
+volumenDefault()
+
+
+
+

@@ -20,7 +20,7 @@ body{
     position: relative;
 }
 
-
+/* Estilos del contenedor de la musica */
 .music-container{
     display: flex;
     flex-direction: column;
@@ -63,6 +63,7 @@ body{
     }
 }
 
+/* Apartado de reproduccion de musica */
 .navigation{
     display: flex;
     align-items: center;
@@ -87,6 +88,7 @@ body{
     cursor: pointer;
 }
 
+/* Titulo y subtítulo de la cancion */
 .music-info{
     background-color: #F0FBFF;
     width: 400px;
@@ -121,10 +123,7 @@ body{
 
 }
 
-.noDisplay{
-    display: none;
-}
-
+/* Barra de progreso de la canción */
 .progress-container{
     background-color: white;
     border-radius: 5px;
@@ -143,9 +142,41 @@ body{
     transition: width .1s linear;
 }
 
-/* .audioController{  
-    background: none;
-    font-size: 25px;
+/* Barra de progreso del volumen */
+.volumeprogress-container{
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px 0;
+    height: 10px;
+    cursor: pointer;
+    width: 70%;
+}
+
+
+.volumeprogress{
+    background-color: #59D7FF;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width .1s linear;
+}
+
+.volumeBtn{
+    background-color: transparent;
     border: none;
+    height: 12px;
+}
+
+.volume-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume-content{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-} */
+}
